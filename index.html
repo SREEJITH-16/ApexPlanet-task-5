@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FocusFlow - a simple responsive productivity web app built with HTML, CSS and JavaScript.">
+  <title>FocusFlow | Productivity Dashboard</title>
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">Focus<span>Flow</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#tasks">Tasks</a>
+      <a href="#about">About</a>
+    </nav>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main id="dashboard">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">APEXPLANET • TASK 5</p>
+        <h1>Plan less.<br><span>Accomplish more.</span></h1>
+        <p class="hero-text">A lightweight productivity dashboard for organizing daily tasks, tracking progress, and staying focused.</p>
+        <a class="primary-btn" href="#tasks">Start Planning</a>
+      </div>
+      <div class="hero-card" aria-label="Productivity illustration">
+        <img src="assets/focus.svg" alt="Person planning tasks" loading="lazy" width="420" height="320">
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Task statistics">
+      <article><strong id="totalCount">0</strong><span>Total Tasks</span></article>
+      <article><strong id="doneCount">0</strong><span>Completed</span></article>
+      <article><strong id="pendingCount">0</strong><span>Pending</span></article>
+      <article><strong id="progressPercent">0%</strong><span>Progress</span></article>
+    </section>
+
+    <section id="tasks" class="task-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h2>Today's Tasks</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Task filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="pending">Pending</button>
+          <button class="filter" data-filter="completed">Done</button>
+        </div>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text" maxlength="80" placeholder="What do you need to accomplish?" aria-label="New task" required>
+        <select id="priorityInput" aria-label="Task priority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <button class="primary-btn" type="submit">+ Add Task</button>
+      </form>
+
+      <div id="taskList" class="task-list" aria-live="polite"></div>
+      <p id="emptyState" class="empty-state">No tasks yet. Add your first task above ✨</p>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <p class="eyebrow">BUILT FOR TASK 5</p>
+        <h2>Simple, responsive & optimized.</h2>
+        <p>FocusFlow uses semantic HTML, modular CSS and vanilla JavaScript. Tasks are stored locally in your browser, so no backend is required.</p>
+      </div>
+      <div class="checks">
+        <span>✓ Responsive layout</span>
+        <span>✓ Local storage</span>
+        <span>✓ Dark mode</span>
+        <span>✓ Lightweight assets</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>FocusFlow • ApexPlanet Internship Task 5</p>
+  </footer>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
